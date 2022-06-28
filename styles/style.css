@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+* {
+    font-family: 'Fredoka One', cursive;
+    padding: 0; /*reset Inner padding*/
+    margin: 0; /*reset Outer Padding*/
+}
+
+:root {
+    --bgColor: #C689C6;
+    --c1: #F47C7C;
+    --c2: #F9F9F9;
+    --c3: #FAD4D4;
+    --c4: #DAEAF1;
+    --c5: #FFE6E6;
+    --c6: #B7E5DD;
+}
+
+body {
+    background: var(--bgColor);
+    height: 100vh;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns:repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.item {
+    font-size: 1.4em;
+    color: darkgoldenrod;
+}
+
+.item.head {
+    background: lightpink;
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 1;
+}
+
+.item.body {
+    grid-column: 2 / span 10;
+    grid-row: 3 / span 9;
+}
+
+.item.fu {
+    background: lightpink;
+    grid-column: 1 / span 12;
+    grid-row: 12 / span 1;
+}
+
+.item.smL {
+    background: aliceblue;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 10;
+}
+
+.item.smR {
+    background: aliceblue;
+    grid-column: 12 / span 1;
+    grid-row: 2 / span 10;
+}
+
+.item.nav {
+    background: chocolate;
+    grid-column: 2 / span 10;
+}
+
+/*Teil 2: Animated Gradient background*/
+.body {
+    background: radial-gradient(ellipse at top, var(--c1), var(--c2), var(--c3), transparent), radial-gradient(ellipse at top, var(--c4), var(--c5), var(--c6), transparent);
+    background-size: 400% 400%;
+    -webkit-animation: prettyBG 12s ease-in-out infinite;
+}
+
+@-webkit-keyframes prettyBG {
+    0% {
+        background-position: 0 50%
+    }
+    50% {
+        background-position: 100% 100%
+    }
+    100% {
+        background-position: 0 50%
+    }
+}
